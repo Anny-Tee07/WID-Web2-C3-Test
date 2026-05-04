@@ -21,11 +21,12 @@ The page reflects my professional identity as a business developer, growth strat
 ## 🗂️ Project Structure
 
 ```
-/
-├── index.html        # The entire page — all HTML and Tailwind classes in one file
-├── planbok-logo.png  # Planbok company logo (used in the Experience section)
-├── logo.png          # Personal/brand logo (used in the navbar and footer)
-└── README.md         # This file
+WID-WEB2-C3-Test
+├── index.html            # The entire page — all HTML and Tailwind classes in one file
+├── assets                # Images used
+│   ├── planbok-logo.png  # Planbok company logo (used in the Experience section)
+│   ├── logo.png          # Personal/brand logo (used in the navbar and footer)
+└── README.md             # This file
 ```
 
 > All styling is done using Tailwind CSS utility classes directly in the HTML. There is no separate `.css` file.
@@ -124,9 +125,7 @@ This project was submitted via GitHub's fork and pull request workflow:
 
 ## 📬 Contact
 
-- **Email:** your@email.com
-- **LinkedIn:** [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-- **Twitter/X:** [@yourhandle](https://twitter.com/yourhandle)
+- **Email:** welechi.ogechi@gmail.com
 
 ---
 
