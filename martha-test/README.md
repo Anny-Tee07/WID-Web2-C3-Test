@@ -48,6 +48,10 @@ This helped me achieve a responsive layout without using JavaScript for dropdown
 
 ---
 
+## 🌍 Live Preview
+
+👉 https://fidelis-martha.github.io/Aurascalesolution/
+
 ## 📌 Note
 
 This project is part of my learning journey in frontend development and improving my UI/UX skills.
