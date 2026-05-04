@@ -31,5 +31,5 @@ Google Fonts: Specialized typography (Heading Font) for a distinct brand feel.
 
 # Live Server:
 
-Vercel:
-Github:
+[Vercel Link](https://agriobuy.vercel.app/)
+[Github Link](https://godayanfe.github.io/Agriobuy./)
