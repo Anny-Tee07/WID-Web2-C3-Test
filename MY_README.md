@@ -1,14 +1,18 @@
-Women In DeFi (WID) — Cohort 3 Landing Page
-A landing page for the Women In DeFi (WID) community, built to showcase Cohort 3 and drive applications.
+# Women In DeFi — Landing Page
 
-🌐 Live Site
-https://my-site-5vt2.vercel.app/
+## Author
+Faith Precious
 
-📌 About
-Women In DeFi is a global community empowering women to build careers in decentralized finance. This landing page highlights our program offerings, community stats, and testimonials from past cohorts.
+## Live Demo
+https://your-vercel-link.vercel.app
 
-🛠️ Built With
-HTML
-CSS
-JavaScript
-📂 Project Structure
+## Built With
+- HTML
+- Native CSS
+
+## Sections
+- Hero
+- Features
+- Testimonials
+- Call to Action
+- Footer
