@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title> Martha Evaluation Test</title>
+</head>
+
+<style>
+    @keyframes fadeIn {
+    from{
+        opacity: 0; 
+        transform: translateY(40px);
+    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+
+</style>
+
+<body class="bg-purple-100">
+    <!-- Nav Section  -->
+    <section>
+        <nav class="grid grid-cols-1 md:grid-cols-3 bg-purple-800 p-6 py- h-auto text-center  ">
+            <!-- Logo -->
+            <div class="w-full">
+                <h2 class="text-2xl font-bold text-white">
+                    AuraScale<span class="text-purple-300">Solutions</span>
+                </h2>
+            </div>
+            <div class="w-full mt-4 md:mt-0 mx-auto  text-center">
+                <ul class="flex  md:flex-row items-center justify-center md:justify-end gap-4 md:gap-8 w-full">
+                    <li><a href="#Home" class="text-white hover:text-purple-300 transition">Home</a></li>
+                    <li><a href="#about" class="text-white hover:text-purple-300 transition">About</a></li>
+                    <li><a href="#services" class="text-white hover:text-purple-300 transition">Services</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Hero Section  -->
+    <section id="Home">
+        <div
+            class="hero bg-purple-100 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 opacity-0 translate-y-10 animate-fadeIn">
+            <div class="txt p-9 md:p-8  lg:p-20">
+                <h1 class="text-5xl font-serif  animate-fadeInUp">
+                    Helping Businesses Grow Smarter
+                </h1>
+                <p class="mt-4 text-2x">
+                    We help businesses grow, adapt, and succeed in today’s fast-changing world. From strategy to
+                    execution, we provide practical solutions that deliver real results.
+                </p>
+                <span>our success is our priority—let’s build something impactful together.</span>
+
+                <div class="flex gap-4">
+                    <div>
+                        <button class="bg-purple-200 text-black p-2 mt-4 rounded-full shadow-xl cursor-pointer
+                             transition transform hover:scale-105 hover:shadow-lg duration-300">
+                            Get Started
+                        </button>
+                    </div>
+                    <div>
+                        <button class="bg-purple-600 text-white p-2 mt-4 rounded-full shadow-xl transition
+                             transform hover:scale-105 hover:shadow-lg duration-300">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="  hidden md:block lg:block">
+                <img src="./assets/images/hero1.png" class="" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services section -->
+    <section id="services" class="bg-purple-300 ">
+        <div>
+            <h2 class="text-center text-5xl p-6 font-bold text-gray">
+                Services
+            </h2>
+        </div>
+        <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 gap-2 animate-fadeIn ">
+
+            <div class="bg-white shadow-md rounded-xl p-6  mb-3 text-center  ">
+                <img src="./assets/icons/chart.png" alt="" class="w-16 mx-auto text-red-400">
+
+                <h2 class="text-xl font-bold mb-2">Digital Strategy</h2>
+                <p class="text-gray-600 mb-4 mt-2">
+                    We analyze your market position to create a roadmap that maximizes your online presence and reach.
+                </p>
+            </div>
+
+            <div class="bg-white shadow-md rounded-xl p-6 text-center mb-3">
+                <p>
+                    <img src="./assets/icons/edit.png" alt="" class="w-16 mx-auto text-red-400">
+                </p>
+                <h2 class="text-xl font-bold mb-2 mt-2">Brand Development</h2>
+                <p class="text-gray-600 mb-4">
+                    Transform your business identity with professional design
+                    and messaging that resonates with your audience.
+                </p>
+            </div>
+
+            <div class="bg-white shadow-md rounded-xl p-6  mb-3 text-center">
+                <p>
+                    <img src="./assets/icons/gear.png" alt="" class="w-16 mx-auto text-red-400">
+                </p>
+                <h2 class="text-xl font-bold mb-2 mt-2"> Operational Efficiency</h2>
+                <p class="text-gray-600 mb-4">
+                    We help you implement smart systems and workflows
+                    to save time and increase your daily productivity.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About section  -->
+    <section id="about">
+        <div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2 p-8 bg-purple-50 animate-fadeIn  ">
+            <div class=" h-96 p- bg- -300">
+                <img src="./assets/images/mission.jpg" alt="" class=" h-full w-full  object-fill">
+            </div>
+
+            <div class=" bg-purple-100 p-9 h-">
+                <button>
+                    Our Mission
+                </button>
+                <h2 class="text-4xl mt-2">A few Words About us</h2>
+                <p class="mt-2">
+                    At AuraScaleSolutions, our mission is to empower businesses with the digital tools and strategic
+                    insights they need to thrive in a competitive world. We don't just offer advice; we partner with you
+                    to build scalable solutions that deliver measurable results and long-term impact.
+                </p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Company Values Section -->
+
+    <section class="bg-purple-50 py-7">
+        <div class="">
+            <h2 class="text-3xl p text-center font-bold text-gray-800 ">Our Company Values</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-8 gap-4 animate-fadeIn  ">
+
+            <div class="p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md">
+                <img src="./assets/icons/lamp.png" alt="" class="w-16 mb-3 text-red-400">
+                <h2 class="text-2xl font-bold">
+                    Innovation
+                </h2>
+                <p>We use the latest technology to stay ahead of market trends.
+                </p>
+            </div>
+
+            <div class="p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md ">
+                <img src="./assets/icons/realiability.png" alt="" class="w-16 mb-3 text-red-400">
+                <h2 class="text-2xl font-bold">
+                    Reliability
+                </h2>
+                <p>Our team is committed to delivering results on time, every time.
+                </p>
+            </div>
+
+            <div class="p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md  h-">
+                <img src="./assets/icons/user2.png" alt="" class="w-16 mb-3 text-red-400">
+                <h2 class="text-2xl font-bold ">
+                    Collaboration
+                </h2>
+                <p class="mb-">
+                    We work as an extension of your team to ensure shared success.
+                </p>
+            </div>
+
+            <div class=" p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md">
+                <img src="./assets/icons/integrity1.png" alt="" class="w-16 mb-3 text-red-400">
+                <h2 class="text-2xl font-bold">
+                    Integrity
+                </h2>
+                <p>
+                    Transparent communication and honest pricing are at our core.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials section  -->
+    <section class="bg-gray-50 py-16 px-8">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">Testimonials</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 animate-fadeIn ">
+
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="flex justify-center mb-4 text-blue-500">
+                        <span class="text-xl">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"AuraScale Solutions transformed our digital strategy. Their
+                        team is incredibly innovative and responsive."</p>
+                    <div class="font-bold text-gray-800">Sarah Jenkins</div>
+                    <div class="text-sm text-gray-500">CEO, TechFlow</div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="flex justify-center mb-4 text-blue-500">
+                        <span class="text-xl">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"Reliability is hard to find, but they deliver every single
+                        time. Our go-to partner for scale."</p>
+                    <div class="font-bold text-gray-800">Michael Chen</div>
+                    <div class="text-sm text-gray-500">Operations Manager</div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="flex justify-center mb-4 text-blue-500">
+                        <span class="text-xl">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"The collaboration felt natural. It wasn't just a service; it
+                        felt like adding experts to our own team."</p>
+                    <div class="font-bold text-gray-800">Amara Okafor</div>
+                    <div class="text-sm text-gray-500">Founder, Lagos Creative</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-8 gap-4 bg-purple-50 ">
+            <div class="  p-8 h-56">
+                <h2 class="text-2xl font-bold mb-4">AuraScale<span class="text-purple-400">Solutions</span></h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Empowering businesses with data-driven strategies and innovative solutions to scale smarter.
+                </p>
+            </div>
+
+            <div class="  p-8 h-56">
+                <h4 class="text-lg font-semibold mb-4">Company</h4>
+                <ul class="space-y-4 text-slate-400 text-sm">
+                    <li><a href="#" class="hover:text-purple-400 transition-colors">Home</a></li>
+                    <li><a href="#" class="hover:text-purple-400 transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-purple-400 transition-colors">Services</a></li>
+                    <li><a href="#" class="hover:text-purple-400 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="  p-8 h-56">
+                <h4 class="text-lg font-semibold mb-4">Services</h4>
+                <ul class="space-y-4 text-slate-400 text-sm">
+                    <li><a href="#" class="hover:text-purple-400 transition-colors">Digital Strategy</a></li>
+                    <li><a href="#" class="hover:text-purple-400 transition-colors">Brand Development</a></li>
+                    <li><a href="#" class="hover:text-purple-400 transition-colors">Operational Efficiency</a></li>
+                    <li><a href="#" class="hover:text-purple-400 transition-colors">Market Analysis</a></li>
+                </ul>
+            </div>
+
+            <div class=" p-8 h-56">
+                <h4 class="text-lg font-semibold mb-6">Get In Touch</h4>
+                <ul class="space-y-2">
+                    <li class="">
+                        📍
+                        Lagos State, Nigeria
+                    </li>
+                    <li class="">
+                        📞 +234 913 837 2313
+                    </li>
+                    <li class="">
+                        ✉️ info@aurascale.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-purple-50 text-center text-xs p-5">
+            <p>&copy; 2026 AuraScaleSolutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

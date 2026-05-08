@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Synthos — Web & AI Consultancy Agency</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #0c0c0c;
+        color: #f5f5f0;
+        font-family: "Outfit", sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.3rem 6%;
+        background-color: #0c0c0c;
+        border-bottom: 1px solid #2e2e2e;
+      }
+
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #c9a84c;
+      }
+
+      .logo span {
+        color: #2dd4bf;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: #888880;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .nav-links a:hover {
+        color: #f5f5f0;
+      }
+
+      .nav-cta {
+        border: 1px solid #c9a84c;
+        color: #c9a84c;
+        padding: 0.55rem 1.4rem;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .nav-cta:hover {
+        background-color: #c9a84c;
+        color: #0c0c0c;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 9rem 6% 6rem;
+        background-color: #0c0c0c;
+      }
+
+      .hero-content {
+        max-width: 720px;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .eyebrow-line {
+        width: 36px;
+        height: 1px;
+        background-color: #c9a84c;
+      }
+
+      .eyebrow span {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #c9a84c;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 4.5rem;
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero h1 em {
+        font-style: italic;
+        color: #c9a84c;
+      }
+
+      .hero h1 .teal {
+        color: #2dd4bf;
+        font-style: normal;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        color: #888880;
+        max-width: 480px;
+        font-weight: 300;
+        margin-bottom: 2.5rem;
+      }
+
+      .hero-btns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-gold {
+        background-color: #c9a84c;
+        color: #0c0c0c;
+        padding: 0.9rem 2rem;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        display: inline-block;
+      }
+
+      .btn-gold:hover {
+        background-color: #e8c97a;
+      }
+
+      .btn-ghost {
+        border: 1px solid #2e2e2e;
+        color: #f5f5f0;
+        padding: 0.9rem 2rem;
+        border-radius: 4px;
+        font-weight: 400;
+        font-size: 0.9rem;
+        display: inline-block;
+      }
+
+      .btn-ghost:hover {
+        border-color: #888880;
+      }
+
+      .hero-numbers {
+        display: flex;
+        gap: 3rem;
+        margin-top: 5rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid #2e2e2e;
+        flex-wrap: wrap;
+      }
+
+      .hero-num strong {
+        display: block;
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #c9a84c;
+        line-height: 1;
+        margin-bottom: 0.3rem;
+      }
+
+      .hero-num span {
+        font-size: 0.82rem;
+        color: #888880;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      section {
+        padding: 6rem 6%;
+      }
+
+      .label {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin-bottom: 1rem;
+      }
+
+      .label-line {
+        width: 28px;
+        height: 1px;
+        background-color: #c9a84c;
+      }
+
+      .label span {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #c9a84c;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 1rem;
+      }
+
+      .section-sub {
+        color: #888880;
+        font-size: 1rem;
+        max-width: 460px;
+        font-weight: 300;
+        margin-bottom: 3.5rem;
+      }
+
+      .services {
+        background-color: #141414;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 1px;
+        border: 1px solid #2e2e2e;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .service-card {
+        background-color: #1a1a1a;
+        padding: 2.2rem;
+      }
+
+      .service-card:hover {
+        background-color: #202020;
+      }
+
+      .service-num {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        font-weight: 800;
+        color: #2e2e2e;
+        line-height: 1;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-card:hover .service-num {
+        color: #c9a84c;
+      }
+
+      .service-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 0.7rem;
+      }
+
+      .service-card p {
+        color: #888880;
+        font-size: 0.92rem;
+        font-weight: 300;
+        line-height: 1.7;
+      }
+
+      .service-tag {
+        display: inline-block;
+        margin-top: 1.2rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #2dd4bf;
+        font-weight: 500;
+      }
+
+      .process {
+        background-color: #0c0c0c;
+      }
+
+      .process-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .process-step {
+        padding: 2rem;
+        border: 1px solid #2e2e2e;
+        border-radius: 10px;
+      }
+
+      .process-step:hover {
+        border-color: #c9a84c;
+      }
+
+      .step-num {
+        font-family: "Playfair Display", serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #c9a84c;
+        letter-spacing: 0.1em;
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .process-step h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .process-step p {
+        color: #888880;
+        font-size: 0.88rem;
+        font-weight: 300;
+      }
+
+      .testimonials {
+        background-color: #141414;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .t-card {
+        border: 1px solid #2e2e2e;
+        border-radius: 10px;
+        padding: 2rem;
+        background-color: #0c0c0c;
+      }
+
+      .t-card:hover {
+        border-color: #c9a84c;
+      }
+
+      .quote-mark {
+        font-family: "Playfair Display", serif;
+        font-size: 4rem;
+        line-height: 0.6;
+        color: #c9a84c;
+        opacity: 0.3;
+        margin-bottom: 1rem;
+      }
+
+      .t-card blockquote {
+        font-size: 0.95rem;
+        color: #f5f5f0;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+      }
+
+      .t-divider {
+        width: 30px;
+        height: 1px;
+        background-color: #c9a84c;
+        margin-bottom: 1rem;
+      }
+
+      .t-author strong {
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: block;
+      }
+
+      .t-author span {
+        font-size: 0.8rem;
+        color: #888880;
+      }
+
+      .cta-band {
+        background-color: #141414;
+        border-top: 1px solid #2e2e2e;
+        border-bottom: 1px solid #2e2e2e;
+        padding: 5rem 6%;
+        text-align: center;
+      }
+
+      .cta-band h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .cta-band h2 em {
+        color: #c9a84c;
+        font-style: italic;
+      }
+
+      .cta-band p {
+        color: #888880;
+        font-size: 1rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+      }
+
+      footer {
+        background-color: #0c0c0c;
+        padding: 4rem 6% 2rem;
+      }
+
+      .footer-top {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid #2e2e2e;
+        margin-bottom: 2rem;
+      }
+
+      .footer-brand .logo {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .footer-brand p {
+        color: #888880;
+        font-size: 0.88rem;
+        font-weight: 300;
+        max-width: 240px;
+        line-height: 1.7;
+      }
+
+      .footer-col h4 {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #888880;
+        margin-bottom: 1.2rem;
+      }
+
+      .footer-col ul {
+        list-style: none;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 0.7rem;
+      }
+
+      .footer-col ul li a {
+        color: #f5f5f0;
+        font-size: 0.88rem;
+        font-weight: 300;
+      }
+
+      .footer-col ul li a:hover {
+        color: #c9a84c;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-bottom p {
+        color: #888880;
+        font-size: 0.82rem;
+      }
+
+      .footer-socials {
+        display: flex;
+        gap: 0.8rem;
+      }
+
+      .footer-socials a {
+        width: 34px;
+        height: 34px;
+        border: 1px solid #2e2e2e;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        color: #888880;
+      }
+
+      .footer-socials a:hover {
+        border-color: #c9a84c;
+        color: #c9a84c;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .footer-top {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .footer-brand {
+          grid-column: 1 / -1;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .footer-top {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-btns {
+          flex-direction: column;
+        }
+
+        .btn-gold,
+        .btn-ghost {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="logo">Syn<span>thos</span></div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#testimonials">Clients</a></li>
+      </ul>
+      <a href="#cta" class="nav-cta">Let's Talk</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <div class="eyebrow-line"></div>
+          <span>Web & AI Consultancy</span>
+        </div>
+        <h1>
+          We build smarter<br /><em>digital products</em><br />powered by
+          <span class="teal">AI</span>
+        </h1>
+        <p>
+          Synthos helps businesses design, build, and scale high-performance
+          websites and AI-driven solutions that deliver real results.
+        </p>
+        <div class="hero-btns">
+          <a href="#services" class="btn-gold">Explore Services</a>
+          <a href="#cta" class="btn-ghost">Book a Consultation</a>
+        </div>
+        <div class="hero-numbers">
+          <div class="hero-num">
+            <strong>80+</strong>
+            <span>Projects Delivered</span>
+          </div>
+          <div class="hero-num">
+            <strong>5 yrs</strong>
+            <span>In the Industry</span>
+          </div>
+          <div class="hero-num">
+            <strong>98%</strong>
+            <span>Client Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="label">
+        <div class="label-line"></div>
+        <span>What We Do</span>
+      </div>
+      <h2 class="section-title">Services built for<br />modern businesses</h2>
+      <p class="section-sub">
+        From concept to launch — we cover every layer of your digital presence.
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <h3>Website Design & Development</h3>
+          <p>
+            Custom, responsive websites built to perform — fast, accessible, and
+            designed to convert visitors into customers.
+          </p>
+          <span class="service-tag">HTML · CSS · JavaScript · React</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <h3>AI Integration & Automation</h3>
+          <p>
+            We embed intelligent AI features into your products — chatbots,
+            recommendation engines, and workflow automation.
+          </p>
+          <span class="service-tag">OpenAI · Langchain · APIs</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <h3>Digital Strategy Consulting</h3>
+          <p>
+            Not sure where to start? We audit your current setup, identify gaps,
+            and build a clear roadmap for growth.
+          </p>
+          <span class="service-tag">Audit · Roadmap · Strategy</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <h3>Ongoing Support & Maintenance</h3>
+          <p>
+            We don't just build and leave. Our retainer plans keep your product
+            secure, updated, and always improving.
+          </p>
+          <span class="service-tag">Monthly · Quarterly · Annual</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+      <div class="label">
+        <div class="label-line"></div>
+        <span>How We Work</span>
+      </div>
+      <h2 class="section-title">A clear process,<br />every time</h2>
+      <p class="section-sub">
+        No surprises. No endless back-and-forth. Just a proven workflow that
+        delivers.
+      </p>
+      <div class="process-list">
+        <div class="process-step">
+          <span class="step-num">01</span>
+          <h3>Discovery</h3>
+          <p>
+            We learn your business, goals, and audience inside out before
+            writing a single line of code.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-num">02</span>
+          <h3>Strategy</h3>
+          <p>
+            We map out the solution — architecture, tech stack, timelines, and
+            success metrics.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-num">03</span>
+          <h3>Design & Build</h3>
+          <p>
+            We design and develop in sprints, sharing progress every step of the
+            way for your feedback.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-num">04</span>
+          <h3>Launch</h3>
+          <p>
+            We handle deployment, testing, and go-live — ensuring everything
+            works flawlessly from day one.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-num">05</span>
+          <h3>Grow</h3>
+          <p>
+            Post-launch, we monitor, optimize, and scale your product as your
+            business grows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+      <div class="label">
+        <div class="label-line"></div>
+        <span>Client Voices</span>
+      </div>
+      <h2 class="section-title">What our clients say</h2>
+      <p class="section-sub">
+        We measure success by the results our clients see.
+      </p>
+      <div class="testimonials-grid">
+        <div class="t-card">
+          <div class="quote-mark">"</div>
+          <blockquote>
+            Synthos redesigned our entire platform and integrated an AI
+            assistant that handles 70% of our customer queries automatically.
+            The ROI was immediate.
+          </blockquote>
+          <div class="t-divider"></div>
+          <div class="t-author">
+            <strong>Ngozi Eze</strong>
+            <span>CEO, TradeNest Africa</span>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="quote-mark">"</div>
+          <blockquote>
+            Working with this team felt different. They asked the right
+            questions, pushed back when needed, and delivered a product that
+            actually grew our conversions by 40%.
+          </blockquote>
+          <div class="t-divider"></div>
+          <div class="t-author">
+            <strong>David Okonkwo</strong>
+            <span>Founder, Buildstack</span>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="quote-mark">"</div>
+          <blockquote>
+            We went from a dated website to a modern, AI-powered platform in 6
+            weeks. The team was professional, communicative, and genuinely cared
+            about our success.
+          </blockquote>
+          <div class="t-divider"></div>
+          <div class="t-author">
+            <strong>Amina Yusuf</strong>
+            <span>Head of Digital, PrimeCare Health</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <div class="cta-band" id="cta">
+      <h2>Ready to build something <em>exceptional?</em></h2>
+      <p>
+        Book a free 30-minute consultation and let's talk about your project.
+      </p>
+      <a href="mailto:hello@synthos.co" class="btn-gold">Book a Free Call →</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">Syn<span>thos</span></div>
+          <p>
+            Web design, development, and AI consultancy for businesses that want
+            to grow intelligently.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">AI Integration</a></li>
+            <li><a href="#">Consulting</a></li>
+            <li><a href="#">Maintenance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Work</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">hello@synthos.co</a></li>
+            <li><a href="#">+234 905 077 6615</a></li>
+            <li><a href="#">Abuja, Nigeria</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Synthos. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
