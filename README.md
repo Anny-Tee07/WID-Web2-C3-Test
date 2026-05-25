@@ -1,165 +1,132 @@
-# Frontend Evaluation Test
+# Ogechi Welechi — Personal Portfolio Landing Page
 
-## 📌 Description
-Frontend evaluation test for building a responsive landing page using HTML with either Tailwind CSS or native CSS, and GitHub fork & pull request workflow.
-
----
-
-## 🎯 Task
-Build a responsive landing page using:
-- HTML  
-- Tailwind CSS **or** native CSS  
+A responsive personal portfolio landing page built with **HTML** and **Tailwind CSS**, showcasing my work as a Business Developer and Growth Strategist across Web3 and African fintech.
 
 ---
 
-## 🧩 Project Requirements
-Your landing page should include:
+## 🌐 Live Preview
 
-- **Hero Section**
-  - Headline
-  - Short description
-  - Call-to-action button  
-
-- **Features Section**
-  - At least 3 features/services  
-
-- **Testimonials or Stats Section**
-  - User testimonials or key metrics  
-
-- **Footer**
-  - Basic links or information  
+> https://wid-web2-c3-test-ten.vercel.app/
 
 ---
 
-## 🎨 Styling Options
-You are free to choose either:
-- Tailwind CSS  
-**or**
-- Native CSS  
+## 📌 About This Project
 
-> ⚠️ Choose one approach and use it consistently.
+This project was built as part of a frontend evaluation test. The goal was to create a fully responsive, single-file portfolio landing page using only HTML and Tailwind CSS — no separate CSS files, no JavaScript frameworks.
+
+The page reflects my professional identity as a business developer, growth strategist, and tech-savvy operator — featuring my current roles at **Planbok** and **Women in DeFi**.
 
 ---
 
-## ⚠️ Important Constraint
-- All your code must be in a **single HTML file (`index.html`)**  
-- If using native CSS, include it inside a `<style>` tag in the HTML file  
-- Do not create external CSS files  
+## 🗂️ Project Structure
+
+```
+WID-WEB2-C3-Test
+├── index.html            # The entire page — all HTML and Tailwind classes in one file
+├── assets                # Images used
+│   ├── planbok-logo.png  # Planbok company logo (used in the Experience section)
+│   ├── logo.png          # Personal/brand logo (used in the navbar and footer)
+└── README.md             # This file
+```
+
+> All styling is done using Tailwind CSS utility classes directly in the HTML. There is no separate `.css` file.
+
+---
+
+## ✨ Features
+
+- **Fully responsive** — works on mobile, tablet, and desktop
+- **Single file** — everything lives in `index.html` as required
+- **Tailwind CSS only** — no custom CSS frameworks or component libraries
+- **Smooth scroll navigation** — navbar links scroll to their sections
+- **Animated hero text** — gradient shimmer effect on the headline
+- **Live Server compatible** — instant browser preview on every save
+- **Accessible** — semantic HTML tags and descriptive `alt` attributes on all images
+
+---
+
+## 📄 Page Sections
+
+| Section          | Description                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------------- |
+| **Navigation**   | Fixed top navbar with logo, section links, and a CTA button                                          |
+| **Hero**         | Headline, bio, call-to-action buttons, and four key stat cards                                       |
+| **Experience**   | Detailed cards for Planbok (Business Developer) and Women in DeFi (Marketing Lead)                   |
+| **Skills**       | Six core skill cards covering BD, growth, marketing, tech communication, market entry, and community |
+| **Testimonials** | Three client/colleague quotes plus a stats bar                                                       |
+| **Contact**      | Email and LinkedIn CTA with social links                                                             |
+| **Footer**       | Logo, copyright, and role description                                                                |
+
+---
+
+## 🛠️ Built With
+
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) — page structure and content
+- [Tailwind CSS](https://tailwindcss.com/) — utility-first styling via CDN
+- [Google Fonts](https://fonts.google.com/) — DM Serif Display (headings) and DM Sans (body)
 
 ---
 
 ## 📱 Responsiveness
-Your design must be fully responsive and work properly on:
-- Mobile  
-- Tablet  
-- Desktop  
+
+The page is designed **mobile-first**. Tailwind's responsive prefixes are used throughout:
+
+| Prefix   | Breakpoint | Device           |
+| -------- | ---------- | ---------------- |
+| _(none)_ | 0px+       | Mobile (default) |
+| `sm:`    | 640px+     | Large mobile     |
+| `md:`    | 768px+     | Tablet           |
+| `lg:`    | 1024px+    | Desktop          |
+
+Example from the experience grid:
+
+```html
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+```
+
+This renders as 1 column on mobile, 2 on tablet, and 3 on desktop.
 
 ---
 
-## 🗂️ Suggested Folder Structure
-You may organize your project like this:
-```
-WID-Web2-C3/
-├── index.html
-├── assets/
-│   ├── images/
-│   └── icons/
-├── styles.css (if using native CSS)
-└── README.md
-```
+## 🔄 Git Workflow (Fork & Pull Request)
 
----
+This project was submitted via GitHub's fork and pull request workflow:
 
-## 🔧 GitHub Workflow (IMPORTANT)
-
-1. **Fork this repository**
-```
-   👉 https://github.com/Womenindefi-org/WID-Web2-C3-Test
-```
-
-2. **Clone your fork**
-
+1. **Forked** the original repository from the evaluator's GitHub account
+2. **Cloned** the fork locally:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/WID-Web2-C3.git
-```
+   git clone https://github.com/OgechiWelechi/repo-name.git
+   cd repo-name
+   ```
+3. **Created** `index.html` from scratch in VS Code
+4. **Staged and committed** the work:
+   ```bash
+   git add index.html
+   git add README.md
+   git commit -m "Add portfolio landing page - Ogechi Welechi"
+   ```
+5. **Pushed** to the fork:
+   ```bash
+   git push origin main
+   ```
+6. **Opened a Pull Request** from the fork back to the original repository
 
-3. **Navigate into the project**
-```bash
-cd WID-Web2-C3
-```  
+---
 
-4. **Create a new branch**
-```bash
-git checkout -b <your branch name>
-```
+## 👩🏾‍💼 About Me
 
-5. **Build your project**
-6. **Commit your changes**
-```bash
- git commit -m "Add hero section"
-```
+**Ogechi Welechi** is a Business Developer and Growth Strategist working at the intersection of technology, finance, and community across Africa.
 
-7. **Push your branch**
-```bash
-git push origin  <your branch name>
-```
+- 🏢 **Business Developer** at [Planbok](https://planbok.com) — programmable multi-chain wallet infrastructure for African businesses
+- 🌍 **Marketing Lead** at Women in DeFi — empowering women to lead in decentralised finance
+- 📍 Based in Nigeria | Working across Nigeria, Ghana, and Kenya
 
-8. **Open a Pull Request to the main repository**
+---
 
-## 🌐 Deployment (Bonus)
+## 📬 Contact
 
-Deploy your project using any of the following:
+- **Email:** welechi.ogechi@gmail.com
 
-- [GitHub Pages](https://pages.github.com/)
-- [Netlify](https://www.netlify.com/)
-- [Vercel](https://vercel.com/)
+---
 
-Add your live project link to your README file.
-
-## 📅 Timeline
-
-Deploy your project using any of the following:
-
-- [GitHub Pages](https://pages.github.com/)
-- [Netlify](https://www.netlify.com/)
-- [Vercel](https://vercel.com/)
-
-Add your live project link to your README file.
-
-## 🧠 Evaluation Criteria
-
-Your submission will be evaluated based on:
-
-- Code structure and cleanliness
-- Proper use of Tailwind CSS or native CSS
-- Responsiveness across devices
-- Git commit quality and workflow
-- Overall design and user experience
-
-## 🚀 Submission Guidelines
-
-- Ensure your project is complete before submitting
-- Submit your work by opening a Pull Request
-- Include a clear and descriptive README in your fork
-
-## ❗ Important Notes
-
-- Do not push directly to this repository
-- All work must be done on your fork
-- Use meaningful commit messages (avoid `"final work"` or `"update"`)
-- Do not edit the this readme file
-
-
-## 💡 Bonus Points
-
-- Smooth animations or transitions
-- Accessibility best practices (alt text, semantic HTML)
-- Clean and modern UI design
-- Well-structured commit history
-
-## 🙌 Good Luck
-- We’re excited to see what you build. Focus on clarity, structure, and responsiveness.
-
-
-
-
+_Built with HTML & Tailwind CSS · © 2026 Ogechi Welechi_

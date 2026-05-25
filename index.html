@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ogechi Welechi | Business Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["DM Serif Display", "serif"],
+            body: ["DM Sans", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  
+  <style>
+    @keyframes shimmer {
+      0% {
+        background-position: 0% 50%;
+      }
+  
+      50% {
+        background-position: 100% 50%;
+      }
+  
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  
+    .animated-gradient {
+      background: linear-gradient(270deg, #f59e0b, #fb923c, #f97316, #fbbf24);
+      background-size: 300% 300%;
+      animation: shimmer 5s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  
+</head>
+<body class="bg-[#000000] text-white font-body antialiased">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#000000]/80 backdrop-blur-md border-b border-white/10">
+
+    <div class="max-w-6xl mx-auto px-6 py-2 h-20 flex items-center justify-between">
+
+      <span class="font-display text-2xl">Ogechi<span class="text-amber-400">.</span></span>
+
+      <ul class="hidden md:flex gap-8 text-sm text-white/60">
+        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+        <li><a href="#experience" class="hover:text-white transition-colors">Experience</a></li>
+        <li><a href="#services" class="hover:text-white transition-colors">What I Do</a></li>
+        <li><a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a></li>
+      </ul>
+
+      <a href="#contact"
+        class="bg-amber-400 hover:bg-amber-300 text-black text-sm font-bold px-5 py-2 rounded-full transition-all hover:scale-105">
+        Let's Talk
+      </a>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+    <section id="about" class="min-h-screen flex items-center pt-28 pb-20 px-6 relative overflow-hidden">
+    
+      <div
+        class="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/3">
+      </div>
+
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    
+      <div class="max-w-6xl mx-auto w-full relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    
+          <!-- Left: text -->
+          <div>
+
+            <div
+              class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/30 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-8">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse"></span>
+              Business Developer · Growth Strategist · Tech Enthusiast
+            </div>
+    
+            <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-tight mb-6">
+              I Help Businesses
+              <span class="animated-gradient block">Grow, Scale,</span>
+              and Win Markets.
+            </h1>
+    
+            <p class="text-white/60 text-lg leading-relaxed mb-10 max-w-lg">
+              Hi, I'm <strong class="text-white font-semibold">Ogechi Welechi,</strong> a business developer and growth
+              strategist at the intersection of business, technology, and community growth. I drive partnerships, build revenue
+              pipelines, and grow web3 brands that matter across Africa and beyond.
+            </p>
+    
+            <div class="flex flex-wrap gap-4">
+
+              <a href="https://www.notion.so/Ogechi-Welechi-210ba3e7b8778015be3fe4af022ff0cc?source=copy_link"
+                class="bg-amber-400 hover:bg-amber-300 text-black font-bold px-8 py-4 rounded-full transition-all hover:scale-105 active:scale-95 text-sm">
+                See My Work
+              </a>
+
+              <a href="https://drive.google.com/file/d/1ZgT_BFzxY7K4a3q0Lcjp91sUAU8hs9bJ/view?usp=drivesdk"
+                class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-8 py-4 rounded-full transition-all text-sm">
+                Download CV
+              </a>
+
+            </div>
+          </div>
+    
+          <!-- Right: stat cards -->
+          <div class="grid grid-cols-2 gap-4">
+
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-amber-400/40 transition-all">
+              <p class="font-display text-4xl text-amber-400 mb-2">3+</p>
+              <p class="text-sm text-white/60 leading-snug">Years in Business Development & Growth</p>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-amber-400/40 transition-all">
+              <p class="font-display text-4xl text-amber-400 mb-2">2</p>
+              <p class="text-sm text-white/60 leading-snug">Active Roles across Web3 & Fintech</p>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-amber-400/40 transition-all">
+              <p class="font-display text-4xl text-amber-400 mb-2">3</p>
+              <p class="text-sm text-white/60 leading-snug">African Markets — Nigeria, Ghana, Kenya</p>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-amber-400/40 transition-all">
+              <p class="font-display text-4xl text-amber-400 mb-2">0%</p>
+              <p class="text-sm text-white/60 leading-snug">Client Churn at Planbok</p>
+            </div>
+
+          </div>
+    
+        </div>
+      </div>
+    </section>
+  
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-24 px-6 border-t border-white/10">
+    <div class="max-w-6xl mx-auto">
+  
+      <div class="mb-16">
+        <p class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">Where I've Worked</p>
+        <h2 class="font-display text-4xl sm:text-5xl">Professional Experience</h2>
+      </div>
+  
+      <div class="space-y-6">
+  
+        <!-- Planbok -->
+        <div
+          class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 hover:bg-white/[0.07] transition-all">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+            <div class="flex items-center gap-4">
+
+              <div
+                class="w-14 h-14 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <img src="/assets/PlanbokLogomarkGreen.png" alt="Planbok" class="h-14 w-14 object-contain" />
+              </div>
+
+              <div>
+                <h3 class="font-display text-2xl">Business Developer</h3>
+                <p class="text-amber-400 font-semibold text-sm">Planbok</p>
+              </div>
+
+            </div>
+
+            <div
+              class="flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold px-3 py-1.5 rounded-full self-start">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse"></span>
+              Current Role
+            </div>
+
+          </div>
+  
+          <p class="text-white/50 text-sm mb-6 leading-relaxed border-l-2 border-amber-400/30 pl-4 italic">
+            Planbok is a programmable wallet infrastructure with built-in payment rails for stablecoin and fiat currencies designed
+            to help businesses easily integrate blockchain and traditional finance based features in treasury management, payment &
+            payroll.
+          </p>
+  
+          <ul class="space-y-3 text-white/70 text-sm">
+            <li class="flex gap-3">
+              <span class="text-amber-400 mt-0.5 flex-shrink-0">▹</span>
+              Identify and onboard enterprise clients and platform partners seeking embedded blockchain payment and
+              payroll infrastructure.
+            </li>
+            <li class="flex gap-3">
+              <span class="text-amber-400 mt-0.5 flex-shrink-0">▹</span>
+              Build and manage strategic relationships across fintech, e-commerce, and SaaS verticals in Nigeria, Ghana,
+              and Kenya.
+            </li>
+            <li class="flex gap-3">
+              <span class="text-amber-400 mt-0.5 flex-shrink-0">▹</span>
+              Drive go-to-market strategy and positioning as Planbok prepares for its seed fundraising round at a $5M
+              pre-money valuation.
+            </li>
+            <li class="flex gap-3">
+              <span class="text-amber-400 mt-0.5 flex-shrink-0">▹</span>
+              Collaborate cross-functionally with product and engineering to translate client needs into product
+              requirements.
+            </li>
+            <li class="flex gap-3">
+              <span class="text-amber-400 mt-0.5 flex-shrink-0">▹</span>
+              Leverage technical understanding of MPC wallet infrastructure and multi-chain protocols to communicate value
+              clearly to non-technical stakeholders.
+            </li>
+          </ul>
+  
+          <div class="flex flex-wrap gap-2 mt-6">
+            <span class="bg-amber-400/10 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Web3</span>
+            <span class="bg-amber-400/10 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Fintech</span>
+            <span class="bg-amber-400/10 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Partnerships</span>
+            <span class="bg-amber-400/10 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Go-to-Market</span>
+            <span class="bg-amber-400/10 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Blockchain
+              Infra</span>
+            <span class="bg-amber-400/10 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Seed
+              Fundraising</span>
+          </div>
+        </div>
+  
+        <!-- Women in DeFi -->
+        <div
+          class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-purple-400/40 hover:bg-white/[0.07] transition-all">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+
+            <div class="flex items-center gap-4">
+
+              <div
+                class="w-14 h-14 rounded-xl bg-purple-400/10 border border-purple-400/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <img src="/assets/widlogo.png" alt="Women in Defi" class="h-14 w-14 object-contain" />
+              </div>
+
+              <div>
+                <h3 class="font-display text-2xl">Marketing Lead</h3>
+                <p class="text-purple-400 font-semibold text-sm">Women in DeFi</p>
+              </div>
+            </div>
+            
+            <div
+              class="flex items-center gap-2 bg-purple-400/10 border border-purple-400/20 text-purple-300 text-xs font-semibold px-3 py-1.5 rounded-full self-start">
+              <span class="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse"></span>
+              Current Role
+            </div>
+          </div>
+  
+          <p class="text-white/50 text-sm mb-6 leading-relaxed border-l-2 border-purple-400/30 pl-4 italic">
+            Women in DeFi is a pan African community and movement empowering women to participate, lead, and thrive in
+            decentralised finance and the broader Web3 ecosystem.
+          </p>
+  
+          <ul class="space-y-3 text-white/70 text-sm">
+            <li class="flex gap-3">
+              <span class="text-purple-400 mt-0.5 flex-shrink-0">▹</span>
+              Lead community growth and brand marketing strategy across social platforms and partner channels.
+            </li>
+            <li class="flex gap-3">
+              <span class="text-purple-400 mt-0.5 flex-shrink-0">▹</span>
+              Develop and execute content campaigns that demystify DeFi concepts and drive inclusivity in Web3.
+            </li>
+            <li class="flex gap-3">
+              <span class="text-purple-400 mt-0.5 flex-shrink-0">▹</span>
+              Manage partnerships with Web3 projects, DAOs, and ecosystem sponsors to create value for community members.
+            </li>
+            <li class="flex gap-3">
+              <span class="text-purple-400 mt-0.5 flex-shrink-0">▹</span>
+              Coordinate events, AMAs, and educational initiatives that grow and retain an engaged global audience.
+            </li>
+          </ul>
+  
+          <div class="flex flex-wrap gap-2 mt-6">
+            <span class="bg-purple-400/10 text-purple-300 text-xs font-medium px-3 py-1 rounded-full">DeFi</span>
+            <span class="bg-purple-400/10 text-purple-300 text-xs font-medium px-3 py-1 rounded-full">Community
+              Growth</span>
+            <span class="bg-purple-400/10 text-purple-300 text-xs font-medium px-3 py-1 rounded-full">Content
+              Strategy</span>
+            <span class="bg-purple-400/10 text-purple-300 text-xs font-medium px-3 py-1 rounded-full">Brand
+              Marketing</span>
+            <span class="bg-purple-400/10 text-purple-300 text-xs font-medium px-3 py-1 rounded-full">Web3
+              Ecosystem</span>
+          </div>
+
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services" class="py-24 px-6 border-t border-white/10">
+    <div class="max-w-6xl mx-auto">
+  
+      <div class="mb-16">
+        <p class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">What I Bring to the Table</p>
+        <h2 class="font-display text-4xl sm:text-5xl">My Core Skills</h2>
+      </div>
+  
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  
+        <div
+          class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 hover:bg-white/[0.07] transition-all group">
+          
+          <div
+            class="w-12 h-12 bg-amber-400/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-400/20 transition-colors">
+            <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+
+          <h3 class="font-display text-xl mb-3">Business Development</h3>
+          
+          <p class="text-white/60 text-sm leading-relaxed">
+            Identifying growth opportunities, building strategic partnerships, and creating revenue pipelines that align
+            with business goals — across fintech, Web3, and emerging markets.
+          </p>
+
+        </div>
+  
+        <div
+          class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 hover:bg-white/[0.07] transition-all group">
+          
+          <div
+            class="w-12 h-12 bg-amber-400/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-400/20 transition-colors">
+            <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+
+          <h3 class="font-display text-xl mb-3">Growth Strategy</h3>
+          
+          <p class="text-white/60 text-sm leading-relaxed">
+            Designing and executing go-to-market strategies, user acquisition funnels, and community growth frameworks
+            that turn early traction into sustainable scale.
+          </p>
+
+        </div>
+  
+        <div
+          class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 hover:bg-white/[0.07] transition-all group">
+          
+          <div
+            class="w-12 h-12 bg-amber-400/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-400/20 transition-colors">
+            <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+            </svg>
+          </div>
+
+          <h3 class="font-display text-xl mb-3">Marketing & Brand</h3>
+
+          <p class="text-white/60 text-sm leading-relaxed">
+            Crafting compelling brand narratives, content strategies, and community campaigns — with a track record in
+            Web3 and DeFi where trust and clarity win audiences.
+          </p>
+
+        </div>
+  
+        <div
+          class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 hover:bg-white/[0.07] transition-all group">
+          
+          <div
+            class="w-12 h-12 bg-amber-400/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-400/20 transition-colors">
+            <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
+            </svg>
+          </div>
+
+          <h3 class="font-display text-xl mb-3">Tech-Savvy Communication</h3>
+          
+          <p class="text-white/60 text-sm leading-relaxed">
+            Bridging technical teams and business stakeholders — translating complex blockchain, wallet infrastructure,
+            and DeFi concepts into clear, compelling language that sells.
+          </p>
+
+        </div>
+  
+        <div
+          class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 hover:bg-white/[0.07] transition-all group">
+
+          <div
+            class="w-12 h-12 bg-amber-400/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-400/20 transition-colors">
+            <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+            </svg>
+          </div>
+
+          <h3 class="font-display text-xl mb-3">Pan-African Market Entry</h3>
+
+          <p class="text-white/60 text-sm leading-relaxed">
+            Deep understanding of Nigerian, Ghanaian, and Kenyan fintech landscapes — including regulatory environments,
+            payment behaviours, and local partnership ecosystems.
+          </p>
+
+        </div>
+  
+        <div
+          class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 hover:bg-white/[0.07] transition-all group">
+          
+          <div
+            class="w-12 h-12 bg-amber-400/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-400/20 transition-colors">
+            <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg> 
+          </div>
+
+          <h3 class="font-display text-xl mb-3">Community Building</h3>
+
+          <p class="text-white/60 text-sm leading-relaxed">
+            Growing engaged communities from the ground up — using education, events, and storytelling to build loyal
+            audiences around products and movements that matter.
+          </p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-24 px-6 border-t border-white/10">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="mb-16">
+      <p class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">Social Proof</p>
+      <h2 class="font-display text-4xl sm:text-5xl">What People Say</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div
+        class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-amber-400/30 transition-all">
+        <div>
+          <p class="font-display text-6xl text-amber-400/30 leading-none mb-2">"</p>
+          <p class="text-white/70 text-sm leading-relaxed mb-6">
+            Ogechi doesn't just open doors — she builds the entire corridor. Her ability to understand our tech deeply
+            and still speak the language of business partners is genuinely rare in this space.
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-black text-xs font-bold flex-shrink-0">
+            IW
+          </div>
+          <div>
+            <p class="text-sm font-semibold">Ifeanyichukwu Welechi</p>
+            <p class="text-xs text-white/40">Technical Founder, Planbok</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-amber-400/30 transition-all">
+        <div>
+          <p class="font-display text-6xl text-amber-400/30 leading-none mb-2">"</p>
+          <p class="text-white/70 text-sm leading-relaxed mb-6">
+            As Marketing Lead, Ogechi brought structure and heart to everything we did. Our community grew significantly
+            and engagement skyrocketed — she made Women in DeFi feel like a movement, not just a group.
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+            SI
+          </div>
+          <div>
+            <p class="text-sm font-semibold">Founder, Women in Defi</p>
+            <p class="text-xs text-white/40">Sarah Idahosa</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-amber-400/30 transition-all md:col-span-2 lg:col-span-1">
+        <div>
+          <p class="font-display text-6xl text-amber-400/30 leading-none mb-2">"</p>
+          <p class="text-white/70 text-sm leading-relaxed mb-6">
+            What sets Ogechi apart is that she understands tech products deeply enough to sell them convincingly. She's
+            a business developer who actually gets what she's building around.
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+            DI
+          </div>
+          <div>
+            <p class="text-sm font-semibold">Dikachi Ibekwe</p>
+            <p class="text-xs text-white/40">Business Lead, LambaCard</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats bar -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
+        <p class="font-display text-3xl text-amber-400">10+</p>
+        <p class="text-white/50 text-xs mt-1">Enterprise Partnerships</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
+        <p class="font-display text-3xl text-amber-400">2x</p>
+        <p class="text-white/50 text-xs mt-1">Community Growth at WiDeFi</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
+        <p class="font-display text-3xl text-amber-400">3</p>
+        <p class="text-white/50 text-xs mt-1">African Markets Covered</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
+        <p class="font-display text-3xl text-amber-400">0%</p>
+        <p class="text-white/50 text-xs mt-1">Client Churn at Planbok</p>
+      </div>
+
+    </div>
+    </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="py-24 px-6 border-t border-white/10">
+
+      <div class="max-w-2xl mx-auto text-center">
+
+        <p class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-4">Get In Touch</p>
+
+        <h2 class="font-display text-4xl sm:text-5xl mb-6">Let's Build Something Together</h2>
+
+        <p class="text-white/60 mb-12 leading-relaxed">
+          Whether you need a business development lead, a growth strategist, or someone who can bridge tech and market — I'd
+          love to connect.
+        </p>
+    
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+          <a href="mailto:welechi.ogechi@email.com"
+            class="bg-amber-400 hover:bg-amber-300 text-black font-bold px-8 py-4 rounded-full transition-all hover:scale-105 active:scale-95 text-sm">
+            ✉️ &nbsp; welechi.ogechi@email.com
+          </a>
+
+          <a href="https://linkedin.com/in/gechic" target="_blank"
+            class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-8 py-4 rounded-full transition-all text-sm">
+            LinkedIn Profile →
+          </a>
+        </div>
+    
+        <div class="flex justify-center gap-6 text-white/40 text-sm">
+          <a href="https://twitter.com/0xgech" target="_blank" class="hover:text-amber-400 transition-colors">Twitter /
+            X</a>
+
+          <span>·</span>
+
+          <a href="https://www.instagram.com/gech.ic" target="_blank"
+            class="hover:text-amber-400 transition-colors">Instagram</a>
+
+          <span>·</span>
+
+          <a href="https://substack.com/@ogechiwelechi" target="_blank" class="hover:text-amber-400 transition-colors">Substack</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 py-10 px-6">
+
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+
+        <span class="font-display text-lg">Ogechi<span class="text-amber-400">.</span></span>
+        
+        <p class="text-white/30 text-xs text-center">
+          © 2026 Ogechi Welechi · Business Developer & Growth Strategist
+        </p>
+
+      </div>
+
+    </footer>
+
+
+
+  
+</body>
+</html>
