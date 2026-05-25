@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<title>Esther Kent WID Assesment</title>
+<meta charset="UFT-8">
+<meta name="viewport" content="width=device-width" initial-scale="1.0">
+</head>
+<body>
+<header class="bg-white border-b border-white">
+    <nav class="flex justify-between item-center p-4">
+        <!--the logo-->
+        <div class="flex item-center">
+            <div class="bg-blue-600 text-white px-2 py-1 rounded font-bold">DS</div>
+            <span class="ml-2 font-bold text-xl">DevSchool</span>
+        </div>
+        <!--nav section-->
+        <ul class="hidden md:flex space-x-4 text-gray-600">
+            <li>Home</li>
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>Download</li>
+        </ul>
+        <!--hamburger button for smaller screens-->
+        <div class="md:hidden">
+            <button class="text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentcolor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+</header>       
+<main class="flex flex-col item-center text-center px-6 py-20 bg-white">
+    <!--headline section-->
+    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 tracking-tighter leading-tight md:leading-none mx-w-4xl">MASTER YOUR DAY<br class="hidden md:block"> WITH DEVSCHOOL.</h1>
+    <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">The minimalist toolkit designed to help you focus on what actually matters. No clutter, just streamlined learning and productivity.</p>
+    <!--CTA Button-->
+    <div class="mt-10">
+        <button class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-blue-700">Get Started for Free</button>
+    </div>
+</main>
+<!--Features Section-->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+        <!--section title-->
+        <h2 class="text-center text-3xl font-extrabold text-gray-900 mb-12 mx-auto">Everything you need to grow.</h2>
+        <!--The grid container-->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <!--card 1-smart sorting-->
+            <div class="bg-gray-200 p-8 rounded-2xl border border-gray-100 flex flex-col item-center md: items-start text-center md:text-left">
+                <div class="bg-gray-200 p-3 rounded-lg mb-4 text-2xl">🚀</div>
+                <h3 class="font-bold text-xl mb-2 text-gray-900">Smart Sorting</h3>
+                <p class="text-gray-6oo">The minimalist to-do list designed to help you focus on what actually matters.</p>
+            </div>
+            <!--card 2-cloud sync-->
+            <div class="bg-gray-200 p-8 rounded-2xl border border-gray-100 flex flex-col item-center md: items-start text-center md:text-left">
+                <div class="bg-gray-200 p-3 rounded-lg mb-4 text-2xl">☁️</div>
+                <h3 class="font-bold text-xl mb-2 text-gray-900">Cloud Sync</h3>
+                <p class="text-gray-6oo">minimalist to-do list designed to help you focus on what actually matters.</p>
+            </div>
+            <!--card 3-Focus mode-->
+            <div class="bg-gray-200 p-8 rounded-2xl border border-gray-100 flex flex-col item-center md: items-start text-center md:text-left">
+                <div class="bg-gray-200 p-3 rounded-lg mb-4 text-2xl">⏱️</div>
+                <h3 class="font-bold text-xl mb-2 text-gray-900">Focus Mode</h3>
+                <p class="text-gray-6oo">Focus motives to what actually matters. No clutter, just productivity.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--statistics section-->
+<section class="py-12 bg-gray-900 text-white">
+    <div class="max-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <!--stat 1-->
+            <div>
+                <p class="text 4xl md:text-5xl font-extrabold mb-2">10K+</p>
+                <p class="text-gray-400 font-medium">Active Students</p>
+            </div>
+            <!--stat 2-->
+            <div>
+                <p class="text 4xl md:text-5xl font-extrabold mb-2">500K+</p>
+                <p class="text-gray-400 font-medium">Skills Mastered</p>
+            </div>
+            <div>
+                <p class="text 4xl md:text-5xl font-extrabold mb-2">4.9/5</p>
+                <p class="text-gray-400 font-medium">Student Rating</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Testimonia section-->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+     <!--the grid container-->
+     <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+         <!--testimonia 1-->
+          <div class="bg-gray-200 p-8 rounded-2xl border border-gray-100 flex flex-col item-center md: items-start text-center md:text-left">
+                <p class="text-xl mb-2 text-gray-700">"DevSchool transformed how I learn. I've mastered JavaScript so much faster!"</p>
+                <p class="text-gray-900">Sarah J., Aspiring Developer</p>
+            </div>
+            <!--testimonial 2-->
+            <div class="bg-gray-200 p-8 rounded-2xl border border-gray-100 flex flex-col item-center md: items-start text-center md:text-left">
+                <p class="text-xl mb-2 text-gray-700">"Finally, a tool that helps me focus. My productivity has doubled."</p>
+                <p class="text-gray-900">Micheal R., Tech Student</p>
+            </div>
+            <!--testimonia 3-->
+            <div class="bg-gray-200 p-8 rounded-2xl border border-gray-100 flex flex-col item-center md: items-start text-center md:text-left">
+                <p class="text-xl mb-2 text-gray-700">"Cloud sync is a lifesaver  bbetween classes. Can't imagine studying without it."</p>
+                <p class="text-gray-900">Aisha K., Computer Science Major</p>
+            </div>
+     </div>
+    </div>
+</section>
+<!--Footer section-->
+<footer class="py-12 bg-white border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px=6 text-center">
+        <!--footer links-->
+        <div class="flex justify-center space-x-6 text-gray-600 mb-6">
+            <a href="#" class="hover:text-blue-600 transition-colors">Home</a>
+            <a href="#" class="hover:text-blue-600 transition-colors">Features</a>
+            <a href="#" class="hover:text-blue-600 transition-colors">Pricing</a>
+            <a href="#" class="hover:text-blue-600 transition-colors">Privacy</a>
+        </div>
+        <!--logo & copyright-->
+        <div class="flex flex-col items-center">
+            <div class="flex item-center mb-4">
+                <div class="bg-blue-600 text-white px-2 py-1 rounded font-bold text-sm">DS</div>
+                <span class="ml-2 font-bold text-gray-900">DevSchool</span>
+            </div>
+            <p class="text-gray-500 text-sm">©️ 2026 DevSchool Inc. All rights reserved</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
