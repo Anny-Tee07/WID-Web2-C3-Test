@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaSpark — Ignite Your Digital Future</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Design Tokens ─────────────────────────────── */
+    :root {
+      --ink:        #0d0d0d;
+      --cream:      #f5f0e8;
+      --gold:       #c9a84c;
+      --gold-light: #e8d08a;
+      --rust:       #b84b2b;
+      --slate:      #2a2d35;
+      --mid:        #6b6e78;
+      --serif:      'Playfair Display', Georgia, serif;
+      --sans:       'DM Sans', sans-serif;
+      --radius:     4px;
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ─── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── Noise Texture Overlay ──────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ─── Nav ────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 5%;
+      background: rgba(245, 240, 232, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      transition: box-shadow var(--transition);
+    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--mid);
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-cta {
+      background: var(--ink);
+      color: var(--cream) !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radius);
+      font-weight: 500 !important;
+      letter-spacing: 0.06em !important;
+      transition: background var(--transition), transform var(--transition) !important;
+    }
+    .nav-cta:hover { background: var(--rust) !important; transform: translateY(-1px); }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--ink);
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── Hero ───────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 8rem 5% 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(201,168,76,0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(184,75,43,0.07) 0%, transparent 60%);
+    }
+
+    /* decorative lines */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: 15%; right: 8%;
+      width: 340px; height: 340px;
+      border: 1px solid rgba(201,168,76,0.18);
+      border-radius: 50%;
+      animation: spin 40s linear infinite;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      top: 20%; right: 12%;
+      width: 220px; height: 220px;
+      border: 1px solid rgba(201,168,76,0.28);
+      border-radius: 50%;
+      animation: spin 25s linear infinite reverse;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .hero-inner {
+      position: relative;
+      max-width: 860px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      animation: fadeUp 0.8s 0.15s ease both;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--rust);
+    }
+
+    .hero-sub {
+      margin: 1.75rem auto 0;
+      max-width: 520px;
+      font-size: 1.125rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.7;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .hero-actions {
+      margin-top: 2.75rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.45s ease both;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 0.9rem 2.2rem;
+      border-radius: var(--radius);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 20px rgba(13,13,13,0.15);
+    }
+    .btn-primary:hover {
+      background: var(--rust);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(184,75,43,0.28);
+    }
+
+    .btn-ghost {
+      border: 1.5px solid rgba(13,13,13,0.25);
+      color: var(--ink);
+      padding: 0.9rem 2.2rem;
+      border-radius: var(--radius);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+    .hero-scroll {
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      animation: fadeUp 0.8s 0.6s ease both;
+    }
+    .hero-scroll span { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); }
+    .scroll-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, var(--mid), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+    /* ─── Section Shared ─────────────────────────────── */
+    section { padding: 7rem 5%; }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+    }
+    .section-sub {
+      margin-top: 1rem;
+      max-width: 500px;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.75;
+    }
+
+    /* ─── Features ───────────────────────────────────── */
+    .features { background: var(--ink); color: var(--cream); }
+    .features .section-label { color: var(--gold-light); }
+    .features .section-title { color: var(--cream); }
+    .features .section-sub { color: rgba(245,240,232,0.55); }
+
+    .features-header { margin-bottom: 4rem; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: rgba(245,240,232,0.08);
+    }
+
+    .feature-card {
+      background: var(--ink);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background var(--transition);
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .feature-card:hover { background: #141414; }
+    .feature-card:hover::before { opacity: 1; }
+
+    .feature-number {
+      font-family: var(--serif);
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(245,240,232,0.05);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.04em;
+      transition: color var(--transition);
+    }
+    .feature-card:hover .feature-number { color: rgba(201,168,76,0.12); }
+
+    .feature-icon {
+      width: 44px; height: 44px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.5rem;
+      color: var(--gold);
+      font-size: 1.25rem;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .feature-card:hover .feature-icon {
+      background: rgba(201,168,76,0.1);
+      border-color: var(--gold);
+    }
+
+    .feature-title {
+      font-family: var(--serif);
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .feature-desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(245,240,232,0.55);
+      line-height: 1.75;
+    }
+
+    /* ─── Stats / Testimonials ───────────────────────── */
+    .social-proof { background: var(--cream); }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 6rem;
+      padding-bottom: 5rem;
+      border-bottom: 1px solid rgba(13,13,13,0.1);
+    }
+    .stat-item { text-align: center; }
+    .stat-value {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+    .stat-value sup { font-size: 50%; vertical-align: super; color: var(--gold); }
+    .stat-value sub { font-size: 45%; vertical-align: baseline; color: var(--gold); }
+    .stat-label {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      font-weight: 500;
+    }
+
+    .testimonials-header { margin-bottom: 3rem; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      border: 1px solid rgba(13,13,13,0.07);
+      border-radius: calc(var(--radius) * 2);
+      padding: 2rem;
+      position: relative;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(13,13,13,0.08);
+    }
+
+    .quote-mark {
+      font-family: var(--serif);
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .testimonial-text {
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .author-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--rust));
+      display: grid;
+      place-items: center;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      flex-shrink: 0;
+    }
+    .author-info strong {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .author-info span {
+      font-size: 0.775rem;
+      color: var(--mid);
+      font-weight: 300;
+    }
+    .stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 0.75rem; }
+
+    /* featured testimonial */
+    .testimonial-card.featured {
+      background: var(--slate);
+      border-color: transparent;
+      grid-row: span 1;
+    }
+    .testimonial-card.featured .testimonial-text { color: rgba(245,240,232,0.8); }
+    .testimonial-card.featured .author-info strong { color: var(--cream); }
+    .testimonial-card.featured .author-info span { color: rgba(245,240,232,0.5); }
+    .testimonial-card.featured .quote-mark { color: rgba(201,168,76,0.4); }
+    .testimonial-card.featured .stars { color: var(--gold-light); }
+
+    /* ─── CTA Banner ─────────────────────────────────── */
+    .cta-banner {
+      background: var(--rust);
+      padding: 6rem 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -10%;
+      width: 60%; height: 200%;
+      background: rgba(255,255,255,0.04);
+      transform: skewX(-15deg);
+    }
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      top: -50%; right: -5%;
+      width: 30%; height: 200%;
+      background: rgba(0,0,0,0.08);
+      transform: skewX(-15deg);
+    }
+    .cta-banner-inner { position: relative; z-index: 1; }
+    .cta-banner h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: white;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .cta-banner p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2.5rem;
+    }
+    .btn-white {
+      background: white;
+      color: var(--rust);
+      padding: 0.9rem 2.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      display: inline-block;
+      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+
+    /* ─── Footer ─────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 4rem 5% 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(245,240,232,0.08);
+      margin-bottom: 2rem;
+    }
+    .footer-brand .nav-logo { font-size: 1.75rem; margin-bottom: 1rem; }
+    .footer-brand p {
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: rgba(245,240,232,0.45);
+      line-height: 1.75;
+      max-width: 240px;
+    }
+    .footer-col h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.65rem; }
+    .footer-col a {
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: rgba(245,240,232,0.5);
+      transition: color var(--transition);
+    }
+    .footer-col a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: rgba(245,240,232,0.3);
+      font-weight: 300;
+    }
+    .social-links { display: flex; gap: 1rem; }
+    .social-link {
+      width: 34px; height: 34px;
+      border: 1px solid rgba(245,240,232,0.12);
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      font-size: 0.8rem;
+      color: rgba(245,240,232,0.4);
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ─── Animations ─────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* stagger children */
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .stagger.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay: 0s; }
+    .stagger.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay: 0.1s; }
+    .stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay: 0.2s; }
+    .stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay: 0.3s; }
+
+    /* ─── Responsive ─────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1.5rem 5%; gap: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .features-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      section { padding: 5rem 5%; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-ghost { width: 100%; max-width: 280px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ──────────────────────────────────────── -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav-logo" aria-label="NovaSpark home">Nova<span>Spark</span></a>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── HERO ──────────────────────────────────────── -->
+  <section class="hero" id="home" aria-label="Hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">✦ Digital Innovation Studio</p>
+      <h1 class="hero-headline">
+        Build Things<br/>Worth <em>Remembering</em>
+      </h1>
+      <p class="hero-sub">
+        We craft digital products that move people — beautifully engineered, strategically designed, and built to last.
+      </p>
+      <div class="hero-actions">
+        <a href="#features" class="btn-primary">Explore Our Work</a>
+        <a href="#contact" class="btn-ghost">Start a Project →</a>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURES ─────────────────────────────────── -->
+  <section class="features" id="features" aria-label="Features">
+    <div class="features-header reveal">
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Expertise that<br/>shapes industries.</h2>
+      <p class="section-sub">From concept to launch, we bring together strategy, design, and engineering into one cohesive process.</p>
+    </div>
+    <div class="features-grid stagger" role="list">
+
+      <article class="feature-card" role="listitem">
+        <div class="feature-number" aria-hidden="true">01</div>
+        <div class="feature-icon" aria-hidden="true">◈</div>
+        <h3 class="feature-title">Product Strategy</h3>
+        <p class="feature-desc">We help you find clarity in complexity — mapping user needs, market opportunities, and business goals into a single north star.</p>
+      </article>
+
+      <article class="feature-card" role="listitem">
+        <div class="feature-number" aria-hidden="true">02</div>
+        <div class="feature-icon" aria-hidden="true">⬡</div>
+        <h3 class="feature-title">UX & Interface Design</h3>
+        <p class="feature-desc">Interfaces that feel inevitable. We design with rigor and taste — every interaction considered, every pixel intentional.</p>
+      </article>
+
+      <article class="feature-card" role="listitem">
+        <div class="feature-number" aria-hidden="true">03</div>
+        <div class="feature-icon" aria-hidden="true">⟡</div>
+        <h3 class="feature-title">Engineering Excellence</h3>
+        <p class="feature-desc">Performant, scalable, and maintainable code. We build systems that grow with you and delight users at every touchpoint.</p>
+      </article>
+
+      <article class="feature-card" role="listitem">
+        <div class="feature-number" aria-hidden="true">04</div>
+        <div class="feature-icon" aria-hidden="true">△</div>
+        <h3 class="feature-title">Brand Identity</h3>
+        <p class="feature-desc">A brand is a promise. We craft visual identities that communicate who you are before you say a single word.</p>
+      </article>
+
+      <article class="feature-card" role="listitem">
+        <div class="feature-number" aria-hidden="true">05</div>
+        <div class="feature-icon" aria-hidden="true">◎</div>
+        <h3 class="feature-title">Growth & Analytics</h3>
+        <p class="feature-desc">Data without insight is noise. We instrument, measure, and iterate — turning numbers into decisions that move the needle.</p>
+      </article>
+
+      <article class="feature-card" role="listitem">
+        <div class="feature-number" aria-hidden="true">06</div>
+        <div class="feature-icon" aria-hidden="true">⋮</div>
+        <h3 class="feature-title">Ongoing Partnership</h3>
+        <p class="feature-desc">We don't disappear after launch. Our teams embed with yours, ensuring products evolve as your users and market demand.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ─── STATS + TESTIMONIALS ──────────────────────── -->
+  <section class="social-proof" id="results" aria-label="Results and testimonials">
+
+    <!-- Stats -->
+    <div class="stats-row stagger" role="list" aria-label="Key metrics">
+      <div class="stat-item" role="listitem">
+        <div class="stat-value"><sup>+</sup>240</div>
+        <p class="stat-label">Projects Delivered</p>
+      </div>
+      <div class="stat-item" role="listitem">
+        <div class="stat-value">98<sub>%</sub></div>
+        <p class="stat-label">Client Satisfaction</p>
+      </div>
+      <div class="stat-item" role="listitem">
+        <div class="stat-value"><sup>$</sup>2.4B</div>
+        <p class="stat-label">Client Revenue Generated</p>
+      </div>
+      <div class="stat-item" role="listitem">
+        <div class="stat-value">12</div>
+        <p class="stat-label">Years in Business</p>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials-header reveal" id="testimonials">
+      <p class="section-label">Testimonials</p>
+      <h2 class="section-title">Words from those<br/>who trusted us.</h2>
+    </div>
+    <div class="testimonials-grid stagger" role="list">
+
+      <article class="testimonial-card featured" role="listitem">
+        <div class="quote-mark" aria-hidden="true">"</div>
+        <div class="stars" aria-label="5 star rating">★★★★★</div>
+        <p class="testimonial-text">Working with NovaSpark was unlike any agency experience I've had. They challenged our assumptions, elevated our vision, and delivered a product that outperformed every benchmark we set. They don't just execute — they think.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">SR</div>
+          <div class="author-info">
+            <strong>Sofia Rodriguez</strong>
+            <span>CPO, Meridian Health</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card" role="listitem">
+        <div class="quote-mark" aria-hidden="true">"</div>
+        <div class="stars" aria-label="5 star rating">★★★★★</div>
+        <p class="testimonial-text">The redesign they delivered increased our conversion rate by 34% in the first month. Design that moves metrics — that's rare.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">JK</div>
+          <div class="author-info">
+            <strong>James Kim</strong>
+            <span>Founder, Elevate Commerce</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card" role="listitem">
+        <div class="quote-mark" aria-hidden="true">"</div>
+        <div class="stars" aria-label="5 star rating">★★★★★</div>
+        <p class="testimonial-text">Their engineering team is world-class. On time, on budget, and the code quality is something our in-house team actually enjoys working with.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">AP</div>
+          <div class="author-info">
+            <strong>Amara Patel</strong>
+            <span>CTO, Finex Platform</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ─── CTA BANNER ───────────────────────────────── -->
+  <div class="cta-banner" id="contact" role="complementary" aria-label="Call to action">
+    <div class="cta-banner-inner">
+      <h2>Ready to build<br/>something great?</h2>
+      <p>Let's talk about your project. No pitch, just conversation.</p>
+      <a href="mailto:hello@novaspark.io" class="btn-white">Start the Conversation</a>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ────────────────────────────────────── -->
+  <footer role="contentinfo">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">Nova<span>Spark</span></div>
+        <p>A digital product studio crafting experiences people love and businesses rely on.</p>
+      </div>
+      <nav class="footer-col" aria-label="Company links">
+        <h4>Company</h4>
+        <ul role="list">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Work</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Services links">
+        <h4>Services</h4>
+        <ul role="list">
+          <li><a href="#features">Strategy</a></li>
+          <li><a href="#features">Design</a></li>
+          <li><a href="#features">Engineering</a></li>
+          <li><a href="#features">Growth</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Legal links">
+        <h4>Legal</h4>
+        <ul role="list">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NovaSpark Studio. All rights reserved.</p>
+      <div class="social-links" aria-label="Social media links">
+        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-link" aria-label="GitHub">⌥</a>
+        <a href="#" class="social-link" aria-label="Dribbble">◉</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── JS ───────────────────────────────────────── -->
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Hamburger
+    const btn = document.getElementById('hamburger');
+    const links = document.getElementById('navLinks');
+    btn.addEventListener('click', () => {
+      const open = btn.classList.toggle('open');
+      links.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    });
+
+    // Close nav on link click (mobile)
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        btn.classList.remove('open');
+        links.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

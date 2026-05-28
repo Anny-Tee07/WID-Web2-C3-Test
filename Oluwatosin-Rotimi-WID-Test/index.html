@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.tailwindcss.com"></script>
+    <title>Agrobuy </title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+   <style>
+    /* this font-family is for custom CSS and  Tailwind doesn't has it */
+    body {
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* A special class to apply the Playfair Display font to headings */
+    .heading-font {
+      font-family: 'Playfair Display', serif;
+    }
+    </style>
+</head>
+<body class="font-['DM Sans', sans-serif] mx-auto" >
+    <!-- Header section -->
+    <header class="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+        <h1 class="heading-font text-center md:text-left text-2xl font-bold text-green-700 w-full md:w-auto" >Agrobuy </h1>
+        <nav class="hidden md:flex gap-8">
+            <a href="#shop" class="text-green-700 hover:text-green-500">Shop</a>
+             <a href="#how-it-works" class="text-green-700 hover:text-green-500">How it works </a>
+             <a href="#reviews " class="text-green-700 hover:text-green-500">Review</a>
+             <button class="bg-green-700 text-white px-5 py-2 rounded-lg hover:bg-green-800">Order Now </button>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero section -->
+        <section id="hero" class="bg-green-50 py-8 px-6 max-w-8xl mx-auto text-center">
+            <p class="w-fit mx-auto bg-green-100 text-green-700 text-sm font-medium px-4 py-1 rounded-full"> Farm-to-Door Delivery </p>
+            <!--Headline-->
+            <h2 class="heading-font text-4xl md:text-5xl font-black text-gray-900 mt-6 mb-4 leading-tight"> Fresh From the Farm, Right to your Door</h2>
+            <!--Short description-->
+            <p class="text-gray-500 text-lg max-w-xl mx-auto mb-4"> Buy premium agric products directly from verified Nigerian farmers. Fresh, organic, and delivered to your doorstep across Nigeria. </p>
+            <!--Call to action button-->
+            <button class="bg-green-700 text-white px-8 py-3 rounded-xl text-base font-medium hover:bg-green-800"> Shop Fresh Produce </button>
+        </section>
+        <section id="features" class="py-10 px-6 bg-white max-w-6xl mx-auto">
+            <!-- Features section content -->
+             <div class="feature text-center mb-12 ">
+                <p class="w-fit mx-auto bg-green-100 text-green-700 text-sm font-medium px-4 py-1 rounded-full">Why Agrobuy? </p>
+                <h2 class="heading-font text-3xl md:text-4xl font-black text-gray-900 mt-4 mb-3"> Everything You Need, Delivered </h2>
+                <p class="text-gray-500 max-w-lg mx-auto"> We connect you directly to Nigeria's best farms for fresh produce at fair prices. </p>
+                </div>
+                <!-- THREE FEATURE CARDS -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                 <div class="bg-green-50 rounded-2xl p-8 text-center ">
+                    <img src="images/image-farm.jpg" alt="verified farm" class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <h3 class="heading-font text-xl font-bold text-gray-900 mb-2">100% Verified Farms </h3>
+                    <p class="text-gray-500 text-sm"> Every farm on our platform is certified and inspected. No middlemen, just fresh produce straight from the source. </p>
+                </div>
+                <div class="bg-green-50 rounded-2xl p-8 text-center ">
+                    <img src="images/image-logistics.jpg" alt="logistics" class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <h3 class="heading-font text-xl font-bold text-gray-900 mb-2">Nationwide Delivery </h3>
+                    <p class="text-gray-500 text-sm"> We deliver fresh produce to your doorstep anywhere in Nigeria. Fast, reliable, and convenient. </p>
+                </div>
+                 <div class="bg-green-50 rounded-2xl p-8 text-center ">
+                    <img src="images/image-varieties.jpg" alt="wide variety" class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <h3 class="heading-font text-xl font-bold text-gray-900 mb-2">Wide Variety and Seasonal Freshness </h3>
+                    <p class="text-gray-500 text-sm"> From Fresh Fruits and vegetables to grains and livestock, we offer a wide range of agricultural products to meet all your needs. Fresh harvested, never frozen or stored long-term </p>  
+                </div>
+             </div>   
+        </section>
+                <!-- How it works section content -->
+        <section id="howitworks" class="py-16 px-6 bg-gray-50 max-w-8xl mx-auto">
+    
+            <div class="text-center mb-12">
+                <p class="w-fit mx-auto bg-green-100 text-green-700 text-sm font-medium px-4 py-1 rounded-full">Simple Steps to Freshness </p>
+                <h2 class="heading-font text-3xl md:text-4xl font-black text-gray-900 mt-4 mb-3"> How Agrobuy Works </h2>
+                <p class="text-gray-500"> Three easy steps from farm to your doorstep. </p>
+            </div>
+            <!-- Steps content -->
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+             <div class="step">
+                 <p class="w-16 h-16 bg-green-700 text-white rounded-2xl flex items-center justify-center mx-auto mb-4"> 1 </p>
+                <h3 class="heading-font text-lg font-bold text-gray-900 mb-2"> Browse and Select from the Catalogue</h3>
+                <p class="text-gray-500"> Explore our wide selection of fresh produce and agricultural products. Choose what you need from hundreds of fresh agric products listed by verified farms across Nigeria with just a few clicks. </p>
+             </div>
+              <div class="step">
+                <p class="w-16 h-16 bg-green-700 text-white rounded-2xl flex items-center justify-center mx-auto mb-4"> 2 </p>
+                <h3 class="heading-font text-lg font-bold text-gray-900 mb-2"> Place Your Order</h3>
+                <p class="text-gray-500"> Add your selected items to the cart, provide your delivery details, and place your order securely online. Pay securely online. We notify the farm and begin preparing your fresh harvest right away. </p>
+             </div>
+              <div class="step">
+                <p class="w-16 h-16 bg-green-700 text-white rounded-2xl flex items-center justify-center mx-auto mb-4"> 3 </p>
+                <h3 class="heading-font text-lg font-bold text-gray-900 mb-2"> Fresh Delivery</h3>
+                <p class="text-gray-500"> Our team picks your order from the farm and delivers it fresh to your doorstep anywhere in Nigeria. Enjoy farm-fresh goodness without leaving home! </p>
+             </div>
+            </div>
+        </section>
+            <section id="reviews" class="py-16 px-6 bg-gray-50 max-w-8xl mx-auto">
+                <!-- Reviews section content -->
+                <div class="text-center mb-12">
+                    <p class="w-fit mx-auto bg-green-100 text-green-700 text-sm font-medium px-4 py-1 rounded-full">Customer Reviews </p>
+                    <h2 class="heading-font text-3xl md:text-4xl font-black text-gray-900 mt-4 mb-3"> What Our Customers Say </h2>
+                    <p class="text-gray-500">  Thousands of Nigerians trust Agrobuy every week. </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div class="bg-green-50 rounded-2xl p-6">
+                    <div class="flex items-center mb-4 p-7>">
+                        <img src="images/image-lawal.jpg" alt="Customer 1" class="w-12 h-12 rounded-full mb-2">
+                        <div class="ml-7">
+                        <h3 class="heading-font text-lg font-bold text-gray-900 mb-2"> Lawal Muhammed - Keffi </h3>
+                        <span class="flex items-center">  <img src="images/icon-star.svg" alt="Star"><img src="images/icon-star.svg" alt="Star"><img src="images/icon-star.svg" alt="Star"><img src="images/icon-star.svg" alt="Star"><img src="images/icon-star.svg" alt="Star"> </span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700"> The vegetables arrived so fresh! Way better than the market and delivered right to my gate before 9am. The quality is amazing, and the delivery is always on time. Highly recommend!" </p>
+                </div>
+                <div class="bg-green-50 rounded-2xl p-6">
+                    <div class="flex items-center mb-4 p-7>">
+                        <img src="images/image-morenike.jpg" alt="Customer 1" class="w-12 h-12 rounded-full mb-2">
+                        <div class="ml-7">
+                        <h3 class="heading-font text-lg font-bold text-gray-900 mb-2"> Morenike A. - Abuja </h3>
+                        <span class="flex items-center">  <img src="images/icon-star.svg" alt="Star"><img src="images/icon-star.svg" alt="Star"><img src="images/icon-star.svg" alt="Star"><img src="images/icon-star.svg" alt="Star"><img src="images/icon-star.svg" alt="Star"> </span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700"> "I run a restaurant in Abuja. Agrobuy saves me hours every week. The produce is always consistent and the bulk pricing is unbeatable!"</p>
+                </div>
+                <div class="bg-green-50 rounded-2xl p-6">
+                    <div class="flex items-center mb-4 p-7>">
+                        <img src="images/images-madam.jpg" alt="Customer 1" class="w-12 h-12 rounded-full mb-2">
+                        <div class="ml-7">
+                        <h3 class="heading-font text-lg font-bold text-gray-900 mb-2"> Madam Fatima K. - Uyo </h3>
+                        <span class="flex items-center"> <img src="images/icon-star.svg" alt="Star"><img src="images/icon-star.svg" alt="Star"><img src="images/icon-star.svg" alt="Star"><img src="images/icon-star.svg" alt="Star"> </span>
+                        </div>
+                    </div>  
+                    <p class="text-gray-700"> "The variety of products on Agrobuy is fantastic. "Great prices, easy ordering, and the products are always fresh. Highly recommend Agrobuy to everyone!"." </p>
+                </div>
+                </div>
+            </section>
+            <!-- Footer section content -->
+            <footer class="bg-green-700 text-white py-6 px-6 max-w-8xl mx-auto text-center">
+                <h2 class="heading-font text-3xl md:text-4xl font-black mt-4 mb-3">Agrobuy </h2>
+                <p >Fresh agric products from verified Nigerian farms, delivered straight to your doorstep. </p>
+                <p class="heading-font text-1xl md:text-2xl font-black mt-4 mb-3"> CONTACT US </p>
+                <a href="#"> Address: 123 Agrobuy Lane, Lagos, Nigeria | </a>
+                <a href="#"> Email: info@agrobuy.com | </a>
+                <a href="#"> Phone: +234 906 123 4567</a>
+                 <p> © 2024 Agrobuy. All rights reserved. </p>  
+            </footer>
+
+    </main>
+    
+</body>
+</html>
